@@ -1,11 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 
 
 
 function App() {
-  const [form, setForm] = React.useState({deckString: "", hashCount: 0})
+  const [form, setForm] = React.useState({deckString: "", hashCount: 1})
   const [result, setResult] = React.useState("")
   const [calculating, setCalculating] = React.useState(false)
 
@@ -32,20 +31,27 @@ function App() {
 
   return (
     <div className="App">
-
-      <textarea
+      <h1>Blake3 Hasher</h1>
+      <form>
+        <label>Text to hash:</label>
+        <textarea
         name="deckString"
         value={form.deckString}
         onChange={handleChange}/>
+        <div className="form-pair">
+          <label>Number of times to hash:</label>
+          <input
+          name="hashCount"
+          value={form.hashCount}
+          onChange={handleChange}/>
+        </div>
+        <button type="button" onClick={calculate}>Calculate</button>
 
-      <input
-        name="hashCount"
-        value={form.hashCount}
-        onChange={handleChange}/>
-
-      <button type="button" onClick={calculate}>Calculate</button>
-      <p>Expected Proof Hash:</p>
-      {result && <p>{result}</p>}
+      </form>
+      <div className="proof-display">
+        <p>Expected Proof Hash:</p>
+        {result && <p>{result}</p>}
+      </div>
     </div>
   );
 }

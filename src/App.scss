@@ -1,0 +1,56 @@
+$yellow: #f1de53;
+$blue: #2431be;
+
+body {
+    background: $blue;
+    text-align:center;
+}
+
+.App {
+    max-width: 1000px;
+    margin: 0 auto;
+    color: $yellow;
+}
+
+form  {
+    display:flex;
+    flex-direction:column;
+    margin: 2% auto; 
+    padding: 1%;
+    width: 60%;
+    label {
+        font-size: 1.3rem;
+        text-align:left;
+        margin-bottom: 2%;
+    }
+    input, textarea {
+        color: $yellow;
+        background: $blue;
+        font-size: 1.5rem;
+        margin-bottom: 1%;
+        border-width: 1px 1px 2px 1px;
+        border-radius: 10px;
+        border-color: $yellow;
+        text-align:center;
+        text-align:left;
+        padding-right: 5px;
+    }
+    textarea {
+
+        height: 100px;
+    }
+    .form-pair {
+        width: 100%;
+        display:flex;
+        justify-content: space-between;
+        align-items:center;
+        font-size: 1.3rem;
+        input {
+            width: 50%;
+        }
+    }
+}
+
+.proof-display {
+    text-align:center;
+}
